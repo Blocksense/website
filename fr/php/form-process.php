@@ -1,6 +1,9 @@
 <?php
+include 'config.php';
+include 'slack-send.php';
+
 $errorMSG = "";
- 
+$Body = ""; 
 // NAME
 if (empty($_POST["name"])) {
     $errorMSG = "Name is required ";
@@ -23,7 +26,7 @@ if (empty($_POST["message"])) {
 }
  
 $EmailTo = "contact@blocksense.io";
-$Subject = "Contact Form Message Received";
+$Subject = "New Contact Form Message";
  
 // prepare email body text
 $Body .= "Name: ";
@@ -37,12 +40,19 @@ $Body .= "\n";
 $Body .= "Message: ";
 $Body .= $message;
 $Body .= "\n";
- 
+
+// prepare #slack text
+$slackText = "New *french* contact form message: \n *Sent by:* ".$name."\n *Email:* ".$email."\n *Message:* " .$message;
+//$slackText = "Testing form"; 
 // send email
 $success = mail($EmailTo, $Subject, $Body, "From:".$email);
- 
 
-// redirect to success page
+// Post to #Slack
+if ($success) {
+    slacksend($slackText);
+} 
+
+// post success message
 if ($success && $errorMSG == ""){
    echo "success";
 }else{
