@@ -51,7 +51,7 @@ gulp.task('watch', function () {
 		gulp.watch('src/css/*.css', ['pack-css']);
 });
  
-gulp.task('default', ['watch']);
+gulp.task('dev', ['watch']);
 
 
-gulp.task('build', ['pack-js', 'pack-css']);
+gulp.task('default', ['pack-js', 'pack-css']);
