@@ -1,4 +1,3 @@
-[![Build Status](https://travis-ci.org/Blocksense/website.svg?branch=master)](https://travis-ci.org/Blocksense/website)
 
 # Blocksense Website
 
