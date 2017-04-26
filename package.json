@@ -1,0 +1,32 @@
+{
+  "name": "blocksense-website",
+  "version": "0.4.0",
+  "description": "Blocksense.io website",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Blocksense/website.git"
+  },
+  "author": "Blocksense coop",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Blocksense/website/issues"
+  },
+  "homepage": "https://github.com/Blocksense/website#readme",
+  "devDependencies": {
+    "browser-sync": "^2.18.8",
+    "del": "^2.2.2",
+    "gulp": "^3.9.1",
+    "gulp-clean-css": "^3.0.4",
+    "gulp-concat": "^2.6.1",
+    "gulp-jshint": "^2.0.4",
+    "gulp-minify": "0.0.15",
+    "gulp-rev": "^7.1.2",
+    "gulp-uncss": "^1.0.6",
+    "jshint": "^2.9.4",
+    "jshint-stylish": "^2.2.1"
+  }
+}
