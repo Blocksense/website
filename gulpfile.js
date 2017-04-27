@@ -4,6 +4,7 @@ var minify = require('gulp-minify');
 var cleanCss = require('gulp-clean-css');
 var rev = require('gulp-rev');
 var del = require('del');
+var browserSync = require('browser-sync').create();
  
 gulp.task('clean-js', function () {
 	return del([
@@ -46,9 +47,20 @@ gulp.task('pack-css', ['clean-css'], function () {
         .pipe(gulp.dest(''));
 });
 
-gulp.task('watch', function () {
+gulp.task('browserSync', function() {
+  browserSync.init({
+    server: {
+      baseDir: 'src'
+    },
+  })
+});
+
+gulp.task('watch', ['browserSync'], function () {
 		gulp.watch('src/js/*.js', ['pack-js']);
 		gulp.watch('src/css/*.css', ['pack-css']);
+        gulp.watch('src/*.html');
+        gulp.watch('src/fr/js/*.js');
+        gulp.watch('src/fr/css/*.css');
 });
  
 gulp.task('dev', ['watch']);
