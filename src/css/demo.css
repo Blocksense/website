@@ -657,7 +657,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ab08cc', end
 .lamp1, .lamp2, .lamp3 {
     -webkit-transition: fill-opacity 2s ease-in-out;
     transition: fill-opacity 2s ease-in-out;
-    fill-opacity:0 !important;
+    fill-opacity:0.1 !important;
 }
 
 .lamp1:hover, .lamp2:hover, .lamp3:hover  {

@@ -21,13 +21,19 @@
     "del": "^2.2.2",
     "gulp": "^3.9.1",
     "gulp-clean-css": "^3.0.4",
+    "gulp-compile-handlebars": "^0.6.1",
     "gulp-concat": "^2.6.1",
     "gulp-jshint": "^2.0.4",
     "gulp-minify": "0.0.15",
     "gulp-rev": "^7.1.2",
     "gulp-uncss": "^1.0.6",
     "gulp-useref": "^3.1.2",
+    "handlebars": "^4.0.6",
     "jshint": "^2.9.4",
-    "jshint-stylish": "^2.2.1"
+    "jshint-stylish": "^2.2.1",
+    "markdown-it": "^8.3.1",
+    "markdown-to-json": "^0.5.1",
+    "marked": "^0.3.6",
+    "rss": "^1.2.2"
   }
 }
