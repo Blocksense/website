@@ -1,3 +1,7 @@
+<<<<<<< HEAD
+[![Build Status](https://travis-ci.org/Blocksense/website.svg?branch=gulp)](https://travis-ci.org/Blocksense/website)
+=======
+>>>>>>> master
 
 # Blocksense Website
 
