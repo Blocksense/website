@@ -12,10 +12,10 @@ jQuery(document).ready(function($){
     drags($('.cd-handle'), $('.cd-resize-img'), $('.cd-image-container'), $('.cd-image-label[data-type="original"]'), $('.cd-image-label[data-type="modified"]'));
 
     //upadate images label visibility. Disbled for now!
-    $(window).on('resize', function(){
+    /*$(window).on('resize', function(){
         updateLabel($('.cd-image-label[data-type="modified"]'), $('.cd-resize-img'), 'left');
         updateLabel($('.cd-image-label[data-type="original"]'), $('.cd-resize-img'), 'right');
-    });
+    }); */
 });
 
 function checkPosition(container) {
