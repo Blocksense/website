@@ -657,7 +657,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ab08cc', end
 .lamp1, .lamp2, .lamp3 {
     -webkit-transition: fill-opacity 2s ease-in-out;
     transition: fill-opacity 2s ease-in-out;
-    fill-opacity:0 !important;
+    fill-opacity:0.1 !important;
 }
 
 .lamp1:hover, .lamp2:hover, .lamp3:hover  {
@@ -741,13 +741,15 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ab08cc', end
     margin-top: 2% 
   }
   .text-over { 
+    -webkit-text-size-adjust: 100%;
    position: absolute; 
-   top: 30%;    
-   width:80%; 
+   top: 25%;    
+   width:90%; 
    color: white;
-   padding:0px 0px 0px 15%;
-   font-size: 110%;
-   line-height: 120%;
+   padding:0px 3% 0px 3%;
+   font-size: 1em;
+   line-height: 1.2em;
+   
   }
   .img-over { 
    position: absolute; 
