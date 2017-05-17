@@ -27,8 +27,10 @@ Whether you need advice for your corporate decisions or a full product developme
     <link href="css/bootstrap.css" rel="stylesheet" />
     <link href="css/material-kit.css" rel="stylesheet"/>   
     <link href="css/demo.css" rel="stylesheet"/>
-    <link href="css/scrubber.css" rel="stylesheet"/>
-	 <link href="css/social.css" rel="stylesheet"/>
+    
+	 
+   <link rel="stylesheet" href="css/cocoen.min.css" />
+
     <!-- endbuild -->
 
 
@@ -102,10 +104,15 @@ Whether you need advice for your corporate decisions or a full product developme
     	<div style="position:absolute;top:35%;right: 0; left: 0;margin: 0  auto;text-align: center">
     	  <h1 style="margin-bottom:0px;color:white"><strong>Blockchain Specialists</strong></h1>
     	  <h3 class="demo1" style="color:white;margin-bottom:0px;margin-top:0px">Consulting, education and development services</h3>
-        <h2 class="demo1" style="margin-top:0px">
-          <span class="rotate" style="color:#fb75e6;text-shadow: black 0.1em 0.1em 0.2em;text-transform: uppercase;font-style:bold">
-            Monax,Ethereum,Hyperledger,Rootstock,Fabric
-          </span>
+         <h2 class="demo1" style="margin-top:0px">
+         <div style="color:#fb75e6;text-shadow: black 0.1em 0.1em 0.2em;text-transform: uppercase;font-style:bold">
+         <ul class="text-rotator">
+  <li>Monax</li>
+  <li>Ethereum</li>
+  <li>Hyperledger</li>
+</ul>
+  
+          
         </h2>
       </div>
     </section>
@@ -569,7 +576,7 @@ Whether you need advice for your corporate decisions or a full product developme
 </section>
 
 <section class="section section-white" name="technology">
-	<div class="container-fluid">
+	<div class="container">
 		<div class="text-center">
             <div class="row">
                 <div class="col-md-8 col-md-offset-2">
@@ -583,16 +590,18 @@ Whether you need advice for your corporate decisions or a full product developme
             </div>
 
             <div class="row">
-            <div class="col-md-8 col-md-offset-2">
-            <figure class="cd-image-container">
-                <img src="./img/inneficient.svg" alt="Inneficient systems">
-               
-                <div class="cd-resize-img"> <!-- the resizable image on top -->
-                   
+              <div class="col-md-3">
+                <h2 style="padding:5%;margin-bottom:0px;color:#79589F">Bridging the gap between today's world</h2>
+              </div>
+              <div class="col-md-6">
+                <div class="cocoen">
+                  <img src="./img/inneficient.svg" alt="">
+                  <img src="./img/efficient.svg" alt="">
                 </div>
-                <span class="cd-handle"></span>
-            </figure> <!-- cd-image-container -->
-            </div>
+              </div>
+              <div class="col-md-3">
+                <h2 style="padding:5%;margin-bottom:0px;color:#79589F">And a blockchain-powered future</h2>
+              </div>
             </div>
 
             
@@ -904,23 +913,19 @@ Whether you need advice for your corporate decisions or a full product developme
     <script src="js/particles.min.js"></script>
     <script src="js/particles.config.js"></script>    
     <script src="js/form.js" type="text/javascript"></script>	
-	<script src="js/nouislider.min.js" type="text/javascript"></script>	
+	
 	<script src="js/material-kit.js" type="text/javascript"></script>
-    <script src="js/jquery.simple-text-rotator.js" type="text/javascript"></script>
-     <script src="js/image-scrubber.js" type="text/javascript"></script>
-	 <script src="js/social.js" type="text/javascript"></script>
+   
+	 
+   <script type="text/javascript" src="js/cocoen.min.js" />
+   <script type="text/javascript" src="js/cocoen-jquery.min.js" />
 
      <!-- endbuild -->
     
     <!--   Text Rotator   -->
-    <script>
-	$(document).ready(function(){
-        $(".demo1 .rotate").textrotator({
-            animation: "fade",
-            speed: 1800
-        });
-    });
-    </script>
+    
+
+    
     
     <!--   Anchor tag scrolling   -->
     <script>
@@ -948,6 +953,13 @@ Whether you need advice for your corporate decisions or a full product developme
         $(".navbar-collapse").collapse('hide');
 });
     </script>
-   
+   <script>
+ 
+      document.addEventListener('DOMContentLoaded', function(){
+        new Cocoen();
+      });
+
+      </script>
+
 
 </html>

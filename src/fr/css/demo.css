@@ -853,3 +853,52 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ab08cc', end
   -webkit-animation-name: shake;
   animation-name: shake;
 }
+.text-rotator {
+  position: relative;
+ 
+  list-style: none;
+  text-align: center;
+  padding: 0;
+  
+}
+
+.text-rotator > li {
+  position: absolute;
+  
+  opacity: 0;
+  margin: 0 auto;
+  width: 100%;
+}
+.text-rotator > li:first-child {
+  -webkit-animation: loop 10s infinite;
+}
+
+.text-rotator > li:nth-child(2) {
+  -webkit-animation: opsecond 10s infinite;
+}
+
+.text-rotator > li:last-child {
+  -webkit-animation: oplast 10s infinite;
+}
+
+@-webkit-keyframes loop {
+  0% { opacity: 0; }
+  10% { opacity: 1; }
+  33% { opacity: 1; } 
+  44% { opacity: 0; }
+}
+
+@-webkit-keyframes opsecond {
+  33% { opacity: 0; }
+  44% { opacity: 1; }
+  66% { opacity: 1; }
+  77% { opacity: 0; }
+}
+  
+@-webkit-keyframes oplast {
+  66% { opacity: 0; }
+  77% { opacity: 1; }
+  100% { opacity: 1; }
+  0% { opacity: 1; }
+  10% { opacity: 0; }
+}

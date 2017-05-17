@@ -2,10 +2,15 @@ jQuery(document).ready(function($){
     //check if the .cd-image-container is in the viewport 
     //if yes, animate it
     checkPosition($('.cd-image-container'));
+    var backHeight = $('.cd-image-container').css('height') ;
+    backHeight = parseInt(backHeight, 10) ;
+    $('.cd-resize-img').css('height', backHeight+"px");
+        
     $(window).on('scroll', function(){
         checkPosition($('.cd-image-container'));
-        scrolls($('.cd-handle'), $('.cd-resize-img'), $('.cd-image-container'));
-
+       // scrolls($('.cd-handle'), $('.cd-resize-img'), $('.cd-image-container'));
+        //scrolls($('.cd-handle'), $('.cd-resize-img'), $('.cd-image-container'));
+        console.log(backHeight);
     });
     
     //make the .cd-handle element draggable and modify .cd-resize-img width according to its position
@@ -19,8 +24,10 @@ jQuery(document).ready(function($){
 });
 
 function checkPosition(container) {
-    if( $(window).scrollTop() + $(window).height()*0.5 > container.offset().top) {
+    if( $(window).scrollTop() + $(window).height()*0.8 > container.offset().top) {
         container.addClass('is-visible');
+        scrolls($('.cd-handle'), $('.cd-resize-img'), $('.cd-image-container'));
+
 
         
 
@@ -32,15 +39,37 @@ function checkPosition(container) {
 
 
 
+
 function scrolls(dragElement, resizeElement, container) {
     dragElement.addClass('movable');
     resizeElement.addClass('resizable');
+    var windowHeight = $(window).height();
+    var currentHeight = $(window).scrollTop();
+    var elementHeight = (container.offset().top); 
 
+     var dragWidth = resizeElement.outerWidth(),
     
-    var percentageToAnimate = ($(window).scrollTop) - (container.offset().top) / 8 ;
+            
+            containerOffset = container.offset().left,
+            containerWidth = container.outerWidth(),
+            minLeft = containerOffset - 10,
+            maxLeft = containerOffset + containerWidth - dragWidth;
+
+
+     
+    var percentageToAnimate = Math.round((currentHeight - elementHeight + $(window).height()*0.8) / windowHeight * 100 ) ;
+    // var leftValue =  xPosition - dragWidth;
+       // console.log (dragWidth);
+    //console.log(windowHeight);
+    //console.log(currentHeight);
+    //console.log(elementHeight);
+    //console.log (percentageToAnimate);
+
 
         $('.movable').css('left', percentageToAnimate+"%" );   
         $('.resizable').css('width', percentageToAnimate+"%"); 
+        dragElement.removeClass('draggable');
+        resizeElement.removeClass('resizable');
         
 
 }
@@ -77,8 +106,8 @@ function drags(dragElement, resizeElement, container, labelContainer, labelResiz
 
             $('.resizable').css('width', widthValue); 
 
-            updateLabel(labelResizeElement, resizeElement, 'left');
-            updateLabel(labelContainer, resizeElement, 'right');
+           // updateLabel(labelResizeElement, resizeElement, 'left');
+            //updateLabel(labelContainer, resizeElement, 'right');
             
         }).on("mouseup vmouseup", function(e){
             dragElement.removeClass('draggable');
